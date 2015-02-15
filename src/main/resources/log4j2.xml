@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration status="OFF" packages="org.graylog2.log4j2">
-    <appenders>
-        <!-- Note: To receive log messages you have to add an input (System -> Inputs)
-            Settings: GELF UDP, port: 12201, bind address: 0.0.0.0
-        -->
+    <appenders>        
         <GELF name="gelfAppender" server="192.168.2.37" port="12201" hostName="NLWGM1793" protocol="UDP"
               additionalFields="{'environment': 'DEV', 'application': 'MyAPP'}" />
         <File name="fileAppender" fileName="app.log">
