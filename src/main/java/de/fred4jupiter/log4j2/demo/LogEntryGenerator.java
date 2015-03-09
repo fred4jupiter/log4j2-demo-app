@@ -51,7 +51,7 @@ public class LogEntryGenerator {
         try {
             throw new IllegalStateException("Something went wrong!");
         } catch (IllegalStateException e) {
-            LOG.info("Exception: Some error occured: " + e.getMessage(), e);
+            LOG.error("Exception: Some error occured: " + e.getMessage(), e);
         }
     }
 
