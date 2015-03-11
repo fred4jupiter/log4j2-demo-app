@@ -1,8 +1,10 @@
 package de.fred4jupiter.log4j2.demo;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 
-
+@Component
 public class RandomNumberGenerator {
 
     private int min = 1;

@@ -2,15 +2,29 @@ package de.fred4jupiter.log4j2.demo;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.ThreadContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class LogEntryGenerator {
 
     private static final org.apache.logging.log4j.Logger LOG = LogManager.getLogger(LogEntryGenerator.class);
 
-    private RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
+    @Autowired
+    private RandomNumberGenerator randomNumberGenerator;
 
-    public void logSomeMessages() {
+    public void startLogging() {
+        while (true) {
+            try {
+                Thread.sleep(2000);
+                logSomeMessages();
+            } catch (InterruptedException e) {
+                LOG.error(e.getMessage(), e);
+            }
+        }
+    }
+
+    private void logSomeMessages() {
         int nextId = randomNumberGenerator.getNextId();
         callLogMethodById(nextId);
     }
