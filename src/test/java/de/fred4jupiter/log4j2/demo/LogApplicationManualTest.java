@@ -1,7 +1,5 @@
 package de.fred4jupiter.log4j2.demo;
 
-import de.fred4jupiter.log4j2.demo.LogApplication;
-import de.fred4jupiter.log4j2.demo.LogEntryGenerator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
