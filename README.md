@@ -5,7 +5,7 @@ Note: To receive log messages in Graylog2 you have to add an input (System -> In
 
 Change Graylog server settings in `log4j2.xml`. 
 
-    <GELF name="gelfAppender" server="192.168.56.100" port="12201" hostName="myhost" protocol="UDP" additionalFields="{'environment': 'DEV', 'application': 'MyAPP'}" />
+    <GELF name="gelfAppender" server="192.168.56.101" port="12201" hostName="myhost" protocol="UDP" additionalFields="{'environment': 'DEV', 'application': 'MyAPP'}" />
 
 Change server and port to your needs. The hostname is the source in Graylog2.
 
