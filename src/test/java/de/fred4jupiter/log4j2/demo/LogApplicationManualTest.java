@@ -13,9 +13,10 @@ public class LogApplicationManualTest {
     @Autowired
     private LogEntryGenerator logEntryGenerator;
 
-	@Test
-	public void contextLoads() {
+    @Test
+    public void contextLoads() {
         logEntryGenerator.startLogging();
-	}
+    }
+
 
 }
