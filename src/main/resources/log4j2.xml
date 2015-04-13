@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration status="OFF" packages="org.graylog2.log4j2">
     <appenders>        
-        <GELF name="gelfAppender" server="127.0.0.1" port="12201" hostName="NLWGM1793" protocol="UDP"
+        <GELF name="gelfAppender" server="172.17.0.2" port="12201" hostName="NLWGM1793" protocol="UDP"
               additionalFields="{'environment': 'DEV', 'application': 'log4j2-demo-app'}" />
         <File name="fileAppender" fileName="app.log">
             <PatternLayout>
