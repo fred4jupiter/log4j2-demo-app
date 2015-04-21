@@ -5,6 +5,9 @@ import org.apache.logging.log4j.ThreadContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.net.InetAddress;
+import java.util.Random;
+
 @Component
 public class LogEntryGenerator {
 
@@ -25,7 +28,7 @@ public class LogEntryGenerator {
     }
 
     private void logSomeMessages() {
-        int nextId = randomNumberGenerator.getNextId();
+        int nextId = randomNumberGenerator.nextNumberBetween(1, 4);
         callLogMethodById(nextId);
     }
 
@@ -62,6 +65,7 @@ public class LogEntryGenerator {
     }
 
     private void error() {
+        ThreadContext.put("responseTime", "" + randomNumberGenerator.nextNumberBetween(1, 1000));
         try {
             throw new IllegalStateException("Something went wrong!");
         } catch (IllegalStateException e) {
