@@ -53,7 +53,9 @@ public class LogEntryGenerator {
 
     private void debug() {
         ThreadContext.put("userId", "testUser");
+        ThreadContext.put("responseTime", "" + randomNumberGenerator.nextNumberBetween(1, 1000));
         LOG.debug("Hello World debug");
+        ThreadContext.clearAll();
     }
 
     private void info() {
@@ -65,7 +67,6 @@ public class LogEntryGenerator {
     }
 
     private void error() {
-        ThreadContext.put("responseTime", "" + randomNumberGenerator.nextNumberBetween(1, 1000));
         try {
             throw new IllegalStateException("Something went wrong!");
         } catch (IllegalStateException e) {
